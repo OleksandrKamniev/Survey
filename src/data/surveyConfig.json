@@ -1,0 +1,256 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "screenType": "choice",
+      "name": "Select your gender:",
+      "options": [
+        { "key": "female", "label": "Female" },
+        { "key": "male", "label": "Male" }
+      ],
+      "next": {
+        "female": "q2",
+        "male": "q2"
+      }
+    },
+    {
+      "id": "q2",
+      "screenType": "choice",
+      "name": "So we can get to know you better, tell us about your relationship status.",
+      "options": [
+        { "key": "single", "label": "I am single and looking for a new connection." },
+        { "key": "inRelationship", "label": "I am in a relationship and want to improve it." }
+      ],
+      "next": {
+        "single": "singleQ1",
+        "inRelationship": "inRelationshipQ1"
+      }
+    },
+    {
+      "id": "singleQ1",
+      "screenType": "choice",
+      "name": "Are you a single parent?",
+      "options": [
+        { "key": "yes", "label": "Yes" },
+        { "key": "no", "label": "No" }
+      ],
+      "next": {
+        "yes": "singleQ2",
+        "no": "singleQ2"
+      }
+    },
+    {
+      "id": "singleQ2",
+      "screenType": "choice",
+      "name": "q1 singleQ1 need a slightly different approach to improve their relationship. Which statement best describes you?",
+      "dynamicNames": [{"id":"q1", "answers":[{"female": "Woman"}, {"male": "Man"}]}, {"id":"singleQ1", "answers":[{"yes": "who have children"}, {"no": "who don't have children"}]}],
+      "options": [
+        { "key": "sad", "label": "I’m very unhappy with how things are going in my relationship" },
+        { "key": "unhappy", "label": "I am in a relationship and want to improve it." },
+        { "key": "happy", "label": "I’m generally happy in my relationship" }
+      ],
+      "next": {
+        "sad": "singleQ3",
+        "unhappy": "singleQ3",
+        "happy": "singleQ3"
+      }
+    },
+    {
+      "id": "singleQ3",
+      "screenType": "choice",
+      "name": "Do you tend to overthink?",
+      "options": [
+        { "key": "yes", "label": "Yes" },
+        { "key": "no", "label": "No" }
+      ],
+      "next": {
+        "yes": "singleQ4",
+        "no": "singleQ4"
+      }
+    },
+    {
+      "id": "singleQ4",
+      "screenType": "inform",
+      "name": "So how does it work?",
+      "caption": "We analyze hundreds of data points to create your unique astrological blueprint. This is combined with AI to tailor-make your astrological insights, based on your answers. We’re going to change your relationship with astrology.",
+      "options": [
+        { "key": "next", "label": "Next" }
+      ],
+      "dynamicNext": {"id":"singleQ3", "answers":[{"yes": "singleQ5"}, {"no": "singleQ6"}]}
+    },
+    {
+      "id": "singleQ5",
+      "screenType": "choice",
+      "name": "What is most important to you?",
+      "options": [
+        { "key": "success", "label": "Success" },
+        { "key": "romance", "label": "Romance" },
+        { "key": "stability", "label": "Stability" },
+        { "key": "freedom", "label": "Freedom" }
+      ],
+      "next": {
+        "success": "summary",
+        "romance": "summary",
+        "stability": "summary",
+        "freedom": "summary"
+      }
+    },
+    {
+      "id": "singleQ6",
+      "screenType": "choice",
+      "name": "Is emotional control tricky for you?",
+      "options": [
+        { "key": "yes", "label": "Yes" },
+        { "key": "sometimes", "label": "Sometimes" },
+        { "key": "rarely", "label": "Rarely" },
+        { "key": "no", "label": "Not at all" }
+      ],
+      "next": {
+        "yes": "summary",
+        "sometimes": "summary",
+        "rarely": "summary",
+        "no": "summary"
+      }
+    },
+    {
+      "id": "inRelationshipQ1",
+      "screenType": "choice",
+      "name": "Are you a parent?",
+      "options": [
+        { "key": "yes", "label": "Yes" },
+        { "key": "no", "label": "No" }
+      ],
+      "next": {
+        "yes": "inRelationshipQ2",
+        "no": "inRelationshipQ2"
+      }
+    },
+    {
+      "id": "inRelationshipQ2",
+      "screenType": "choice",
+      "name": "Single q1 inRelationshipQ1 need a slightly different approach to find their perfect partner. But first, how did you feel in your last relationship?",
+      "dynamicNames": [{"id":"q1", "answers":[{"female": "Woman"}, {"male": "Man"}]}, {"id":"inRelationshipQ1", "answers":[{"yes": "who have children"}, {"no": "who don't have children"}]}],
+      "options": [
+        { "key": "unhappy", "label": "I was unhappy with low things were going in my relationship" },
+        { "key": "partlyUnhappy", "label": "I was unhappy with parts of my relationship, but some thing were working" },
+        { "key": "happy", "label": "I was generally happy with my relationship" },
+        { "key": "neverInRelationship", "label": "I’ve never been in a relationship" }
+      ],
+      "next": {
+        "unhappy": "inRelationshipQ3",
+        "partlyUnhappy": "inRelationshipQ3",
+        "happy": "inRelationshipQ3",
+        "neverInRelationship": "inRelationshipQ3"
+      }
+    },
+    {
+      "id": "inRelationshipQ3",
+      "screenType": "choice",
+      "name": "Is your partner an introvert or extrovert?",
+      "options": [
+        { "key": "introvert", "label": "Introvert" },
+        { "key": "extrovert", "label": "Extrovert" },
+        { "key": "both", "label": "A bit of both" }
+      ],
+      "next": {
+        "introvert": "inRelationshipQ4",
+        "extrovert": "inRelationshipQ4",
+        "both": "inRelationshipQ4"
+      }
+    },
+    {
+      "id": "inRelationshipQ4",
+      "screenType": "choice",
+      "name": "What is your partner’s gender?",
+      "options": [
+        { "key": "female", "label": "Female" },
+        { "key": "male", "label": "Male" }
+      ],
+      "next": {
+        "female": "inRelationshipQ5",
+        "male": "inRelationshipQ5"
+      }
+    },
+    {
+      "id": "inRelationshipQ5",
+      "screenType": "choice",
+      "name": "Do you agree with the statement below?",
+      "caption": "“My partner and I make sex a priority in our relationship”",
+      "options": [
+        { "key": "stronglyAgree", "label": "Strongly agree" },
+        { "key": "agree", "label": "Agree" },
+        { "key": "neutral", "label": "Neutral" },
+        { "key": "disagree", "label": "Disagree" },
+        { "key": "stronglyDisagree", "label": "Strongly disagree" }
+      ],
+      "next": {
+        "stronglyAgree": "inRelationshipQ6",
+        "agree": "inRelationshipQ6",
+        "neutral": "inRelationshipQ6",
+        "disagree": "inRelationshipQ6",
+        "stronglyDisagree": "inRelationshipQ6"
+      }
+    },
+    {
+      "id": "inRelationshipQ6",
+      "screenType": "choice",
+      "name": "When you think about your relationship goals, you feel...?",
+      "options": [
+        { "key": "optimistic", "label": "Optimistic! They are totally doable, with some guidance." },
+        { "key": "cautious", "label": "Cautious. I’ve struggled before, but I’m hopeful." },
+        { "key": "anxious", "label": "I’m feeling a little anxious, honestly." }
+      ],
+      "next": {
+        "optimistic": "q3",
+        "cautious": "q3",
+        "anxious": "q3"
+      }
+    },
+    {
+      "id": "q3",
+      "screenType": "choice",
+      "name": "Where did you hear about us?",
+      "options": [
+        { "key": "poster", "label": "Poster or Billboard" },
+        { "key": "friend", "label": "Friend or Family" },
+        { "key": "instagram", "label": "Instagram" },
+        { "key": "mail", "label": "Direct Mail or Package Insert" },
+        { "key": "onlineTv", "label": "Online TV or Streaming TV" },
+        { "key": "tv", "label": "TV" },
+        { "key": "radio", "label": "Radio" },
+        { "key": "searchEngine", "label": "Search Engine (Google, Bing, etc.)" },
+        { "key": "newspaper", "label": "Newspaper or Magazine" },
+        { "key": "facebook", "label": "Facebook" },
+        { "key": "blog", "label": "Blog Post or Website Review" },
+        { "key": "podcast", "label": "Podcast" },
+        { "key": "influencer", "label": "Influencer" },
+        { "key": "youtube", "label": "Youtube" },
+        { "key": "pinterest", "label": "Pinterest" },
+        { "key": "other", "label": "Other" }
+      ],
+      "next": {
+        "poster": "summary",
+        "friend": "summary",
+        "instagram": "summary",
+        "mail": "summary",
+        "onlineTv": "summary",
+        "tv": "summary",
+        "radio": "summary",
+        "searchEngine": "summary",
+        "newspaper": "summary",
+        "facebook": "summary",
+        "blog": "summary",
+        "podcast": "summary",
+        "influencer": "summary",
+        "youtube": "summary",
+        "pinterest": "summary",
+        "other": "summary"
+      }
+    },
+    {
+      "id": "summary",
+      "screenType": "summary",
+      "name": "Summary"
+    }
+  ]
+}
