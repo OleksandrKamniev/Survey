@@ -1,10 +1,14 @@
-import HomePage from "@/pages/Home";
+'use client';
 
-export default function Survey() {
-  return (
-      <div
-          className="font-body">
-          <HomePage/>
-      </div>
-  );
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
+export default function HomePage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/q1');
+  }, [router]);
+
+  return null;
 }
