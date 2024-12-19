@@ -4,8 +4,6 @@ import { RootState } from '@/store/store';
 
 const Summary = () => {
   const answers = useSelector((state: RootState) => state.answers);
-  console.log('stateAnswers');
-  console.log(answers);
   useEffect(() => {
     sessionStorage.removeItem('history');
     sessionStorage.removeItem('answers');

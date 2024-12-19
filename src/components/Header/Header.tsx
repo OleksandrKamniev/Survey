@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
-import nebulaLogoBlack from '../../assets/nebulaLogoBlack.png';
-import chevronBlack from '../../assets/chevronBlack.svg';
-import nebulaLogoWhite from '../../assets/nebulaLogoWhite.png';
-import chevronWhite from '../../assets/chevronWhite.svg';
+import nebulaLogoBlack from '@/public/nebulaLogoBlack.png';
+import chevronBlack from '@/public/chevronBlack.svg';
+import nebulaLogoWhite from '@/public/nebulaLogoWhite.png';
+import chevronWhite from '@/public/chevronWhite.svg';
 import { HeaderProps } from '@/components/Header/types';
 
 const Header = ({ isInformScreen, history, handleBackPage }: HeaderProps) => {

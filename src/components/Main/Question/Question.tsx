@@ -29,21 +29,28 @@ const Question = ({
       : question.name;
 
   const resolveNextId = (answer: string) => {
-    let nextId = question.next?.[answer] || null;
-
-    if (question.dynamicNext) {
-      const dependentAnswer = storageAnswers[question.dynamicNext.id];
-      if (dependentAnswer) {
-        const dynamicMapping = question.dynamicNext.answers.find(
-          (mapping) => mapping[dependentAnswer],
-        );
-        if (dynamicMapping) {
-          nextId = dynamicMapping[dependentAnswer];
-        }
-      }
+    if (question.next?.[answer]) {
+      return question.next[answer];
     }
 
-    return nextId;
+    if (!question.dynamicNext) {
+      return null;
+    }
+
+    const dependentAnswer = storageAnswers[question.dynamicNext.id];
+    if (!dependentAnswer) {
+      return null;
+    }
+
+    const dynamicMapping = question.dynamicNext.answers.find(
+      (mapping) => mapping[dependentAnswer],
+    );
+
+    if (!dynamicMapping) {
+      return null;
+    }
+
+    return dynamicMapping[dependentAnswer];
   };
 
   const getButtonClass = (key: string) =>
